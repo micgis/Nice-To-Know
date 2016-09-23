@@ -1,0 +1,54 @@
+\section{Integralrechung}
+Die Integralrechnung ist die Umkehrung der Differentialrechnung. Bei der Differentialrechnung wird zu einer gegebenen Funktion $f(x)$ die Ableitung $f'(x)$ bestimmt. Bei der Integralrechung wird zu eine Ableitung $f'(x)$ eine Funktion $f(x)$ gesucht welche mit der Ableitung übereinstimmt. 
+\begin{equation*}
+	F'(x)=\frac{dF}{dx}=f(x)
+\end{equation*}
+\begin{tabular}{|c|c|}
+	\hline \textbf{Bestimmtes Integral} & \textbf{Unbestimmtes Integral}\\
+	\hline $\int_{a}^{b}{f(x)dx}$ & $\int{f(x)dx}=F(x)+C$\\
+	\hline \tabbild[width=4cm]{images/best_integral.png}& \tabbild[width=4cm]{images/unb_integral.png}\\
+	\hline
+\end{tabular}
+
+\subsection{Integrationsregeln}
+\begin{tabular}{|l|l|l|}
+	\hline	\textbf{Integrationskonstane} & $\int{f(x)dx}=F(x)+C$&\\
+	\hline	\textbf{Faktorregel}& $\int{af(x)dx}=a \int{f(x)dx}$&\\
+	\hline	\textbf{Summenregel}& $\int{[u(x) \pm v(x)]dx}=\int{u(x)dx} \pm \int{v(x)dx}$&\\
+	\hline \textbf{Potenzregel}& $\int {f'(x)\cdot f(x)^{a}}=\frac{f(x)^{a+1}}{a+1}+C$& $\int {\sin^3{(x)} \cdot \cos(x)}=\frac{\sin^4{(x)}}{4}+C$\\
+	\hline \textbf{Logarithmusregel} & $\int{\frac{f'(x)}{f(x)}dx}= \ln{(x)}+C$&$\int{\frac{x^2}{1+x^3}}=\ln(1+x^3)+C$ \\
+	\hline \textbf{Linearität} &$\int{f(ax \pm b)dx}=\frac{1}{a} \int{f(x)dx} \pm \int{b dx}$&\\
+	\hline \textbf{Partielle Integration} &$\int{u(x)v'(x)dx}=u(x)v(x)- \int{u'(x)v(x)dx}$ &$\int{ \underbrace{x^2}_{v'} \cdot \underbrace{\ln{x}}_{u}}=\frac{x^3}{3} \cdot \ln{x} - \int{\frac{x^3}{3} \cdot \frac{1}{x}}$\\
+			\textbf{(Produktregel)} & &\\
+	\hline	\textbf{Substitution} &$\int_{a}^{b}{f(x)dx}=\int_{g(a)}^{g(b)}{f(g(t))\cdot g'(t)dt}$  &$\int{(x^2+2)^3 \cdot 2xdx}\;\;//\;u=x^2+2$\\
+	& &$\int{u^3 \cdot 2xdx}\;\;//\;du=2xdx$\\
+	& &$\int{u^3 \cdot du}=\frac{u^4}{4}=\frac{(x^2+2)^4}{4}$\\
+	\hline
+\end{tabular}
+
+\subsection{Wichtige Integrale}
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{|l|l|}
+	\hline
+	$\int \sin(x)dx=-\cos(x)$ & $\int \sin(a+bx)dx=-\frac1b \cos(a+bx)$\\
+	\hline
+	$\int \sin^2(x)dx=-\frac14 \sin(2x)+\frac x2$ 
+	& $\int
+	e^{ax+c}\sin(bx+d)dx=\frac{e^{ax+c}}{a^2+b^2}(a\sin(bx+d)-b\cos(bx+d))$\\
+	\hline
+	$\int \cos(x)dx=\sin(x)$ & $\int \cos(a+bx)dx=\frac1b \sin(a+bx)$\\
+	\hline
+	$\int \cos^2(x)dx=\frac14 \sin(2x)+\frac x2$ 
+	& $\int
+	e^{ax+c}\cos(bx+d)dx=\frac{e^{ax+c}}{a^2+b^2}(a\cos(bx+d)+b\sin(bx+d))$\\
+	\hline
+	$\int e^x dx=e^x$ & $\int e^{ax}dx=\frac1a e^{ax}$\\
+	\hline
+	$\int xe^{ax}dx=\frac{1}{a^2} e^{ax}(ax-1)$ & $\int x^2 e^{ax} dx =
+	e^{ax}\left( \frac{x^2}{a} - \frac{2x}{a^2} + \frac{2}{a^3}\right)$ \\
+	\hline
+	$\int x^n e^{ax} dx = \frac{1}{a} x^n e^{ax} - \frac{n}{a} \int x^{n-1}
+	e^{ax} dx$ & \\
+	\hline
+\end{tabular}
+\newpage

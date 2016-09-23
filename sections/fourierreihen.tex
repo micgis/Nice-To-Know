@@ -1,0 +1,45 @@
+\section{Fourierreihen}
+Mithilfe der Fourierreihe kann ein beliebiges periodisches Signal in seine Grundschwingungen (Harmonische) aufgeteilt werden.\\
+%\renewcommand{\arraystretch}{2}
+\begin{tabular}{|l|l|}
+	\hline \textbf{Fourierreihe} &${f(t) = \frac{a_0}{2} + \sum\limits_{k=1}^{\infty} \left[a_k \cos(k
+		\omega t) + b_k \sin(k \omega t)\right]} \rightarrow FR[f(t)] \; \omega=\frac{2 \pi}{T}=2 \pi$\\
+	\hline \textbf{Berechnung Reell} & $a_0 = \frac{2}{T}\int\limits_0^{T}
+	f(t)dt, \quad a_k = \frac{2}{T}\int\limits_0^{T} f(t)\cos(k \omega_1 t) dt, \quad b_k =
+	\frac{2}{T}\int\limits_0^{T} f(t)\sin(k \omega_1 t) dt$\\
+	\hline \textbf{Berechnung komplex} & $c_k=\frac{1}{T}\int_0^T{f(t)}\cdot
+		e^{-jk\omega t}, \quad f(t) = \sum\limits_{k = -\infty}^{\infty} c_k \cdot e^{j k \omega t dt}$\\
+	\hline
+\end{tabular}
+
+\subsection{Symmetrie}
+\begin{tabular}{|l|l|l|l|}
+	\hline
+	\textbf{gerade Funktion} & \textbf{ungerade Funktion} &
+	\textbf{Halbperiode 1} & \textbf{Halbperiode 2}\\
+	\hline
+	\tabbild[width=3cm]{images/gerade_funktion.png}&
+	\tabbild[width=3cm]{images/ungerade_funktion.png}&   
+	\tabbild[width=3cm]{images/halbperiode_1.png}&   
+	\tabbild[width=3cm]{images/halbperiode_2.png}\\
+	\hline $f(-t)=f(t)$ & $f(-t)=-f(t)$ & $f(t)=f(t+\pi)$ & $f(t)=-f(t+\pi)$\\
+	$b_k=0$ & $a_k=0$ & $a_{2k+1}=0$ & $a_{2k}=0$\\
+	$a_k = \frac{4}{T} \int\limits_0^{\frac{T}{2}} f(t) \cdot \cos(k \omega_1
+	t) dt$ &
+	$b_k =  \frac{4}{T} \int\limits_0^{\frac{T}{2}} f(t) \cdot
+	\sin(k \omega_1 t) dt$ &
+	$b_{2k+1}=0$ & $b_{2k}=0$\\
+	\hline $\Im(c_n)=0$ &$\Re(c_n)$ & &\\ 
+	\hline
+\end{tabular}
+
+\subsection{Wichtige Fouriereihen}
+\begin{tabular}{|l|l|l|}
+	\hline \textbf{Dreieckfunktion} & \textbf{Rechteckfunktion}& \textbf{Impulsfunktion}\\
+	\hline \tabbild[width=4cm]{images/dreiecksig.png} &\tabbild[width=4cm]{images/rechteck.png}&\tabbild[width=4cm]{images/impuls.png}\\
+	\hline $a_0=A$& $a_0=0$& $a_0=\frac{2At_1}{T}$\\
+	\hline $a_k=-\frac{4A}{\pi^{2}k^{2}}$&$a_k=0$&$a_k=\frac{A}{\pi k}(\sin(\frac{2 \pi t_1}{T}k))$\\
+	\hline $b_k=0$&$b_k=\frac{4A}{\pi k}$&$b_k=-\frac{A}{\pi k}(1-\cos(\frac{2 \pi t_1}{T}k))$\\
+	\hline
+\end{tabular}
+\newpage

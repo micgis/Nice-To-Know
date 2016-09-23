@@ -1,0 +1,142 @@
+\section{Matrizen}
+\subsection{Gaussverfahren}
+Durch Addition und Subtraktion einzelner Zeilen (auch von Vielfachen einer
+Zeile) werden einzelne Stellen auf Null gebracht.\\
+\vspace{1.0pt}
+$\begin{bmatrix}
+a_{11} & a_{12}& \ldots & a_{1n}\\
+a_{21}& &\ldots & \\
+\ldots \\
+a_{n1} & & \ldots & a_{nn}    			
+\end{bmatrix}=
+\begin{bmatrix}
+a_{11} & a_{12}& \ldots & a_{1n}\\
+k a_{21}-n a_{11}& ka_{22}-n a_{12}&\ldots & k a_{2n} - n a_{1n}\\
+\ldots \\
+a_{n1} & & \ldots & a_{nn}    			
+\end{bmatrix}$ \\
+\vspace{1.0pt}
+Die n * erste Zeile wurde von der k * zweiten Zeile abgezogen ($a_{2.}= 
+k a_{2.}- n a_{1.}$)
+
+\subsection{Determinante}
+\begin{minipage}[t]{6cm}
+	\textbf{2x2 Matrix}    
+	\[ \det \begin{bmatrix}
+	a & b \\
+	c & d
+	\end{bmatrix} = ad - bc \]
+\end{minipage}
+\begin{minipage}[t]{12cm}
+	\textbf{3x3 Matrix}
+	\[\begin{bmatrix}
+	a & b & c \\
+	d & e & f \\
+	g & h & i 
+	\end{bmatrix} = aei + bfg + cdh - ceg - afh - bdi \]
+\end{minipage}
+
+\subsubsection{Grössere Matrizen}
+$$A\epsilon M_n: \det A =    
+\begin{vmatrix}
+a_{11} & a_{12}& \ldots & a_{1n}\\
+a_{21}& &\ldots & \\
+\ldots \\
+a_{n1} & & \ldots & a_{nn}    			
+\end{vmatrix}=
+(-1)^{1+1}a_{11}D_{11} + (-1)^{1+2}a_{12}D_{12}+ \ldots +
+(-1)^{1+n}a_{1n}D_{1n}$$
+\\
+\textbf{Unterdeterminante}
+$$D_{11}=
+\begin{vmatrix}
+a_{22} & \ldots & a_{2n}\\
+\ldots\\
+a_{n2}& \ldots & a_{nn}
+\end{vmatrix} 	\\
+\qquad
+D_{12}=
+\begin{vmatrix}
+a_{21} & a_{23}& \ldots & a_{2n}\\
+\ldots\\
+a_{n1}& a_{n3}&\ldots & a_{nn}
+\end{vmatrix}$$\\
+$D_{ij}$ die (n-1)$ \times $(n-1)-Untermatrix von D ist, die durch Streichen der
+i-ten Zeile und j-ten Spalte entsteht.\\
+Diese Methode ist zu empfehlen, wenn die Matrix in einer Zeile oder Spalte
+bis auf eine Stelle nur Nullen aufweisst.
+Dies lässt sich meist mit dem Gausverfahren bewerkstelligen.
+
+\subsection{Inverse Matrix}
+Existiert nur wenn Matrix regulär: $\det A \neq 0$\\
+\begin{minipage}{7cm}
+	\textbf{2x2 Matrix:}    
+	$$ A^{-1} = \begin{bmatrix} a & b \\ c & d \\ \end{bmatrix}^{-1} = \frac{1}{ad
+		- bc} \begin{bmatrix} d & -b \\ -c & a \\ \end{bmatrix} $$
+\end{minipage}
+\begin{minipage}{11cm}
+	\textbf{3x3 Matrix:}
+	$$  A^{-1} = \begin{bmatrix} a & b & c\\ d & e & f \\ g & h & i \\ \end{bmatrix}^{-1} =
+	\frac{1}{\det(A)} \begin{bmatrix} ei - fh & ch - bi & bf - ce \\ fg - di & ai
+	- cg & cd - af \\ dh - eg & bg - ah & ae - bd \end{bmatrix} $$
+\end{minipage}\\
+
+\begin{multicols}{2}
+	\subsection{Transponierte Matrix}
+	Transponierte Matrix:  $A^T=[a_{ik}^T]=[a_{ki}]$ \\
+	vertauschen der Zeilen mit Spalten
+	
+	\subsection{Einheitsmatrix}
+	Einheitsmatrix: $I=E= 
+	\begin{bmatrix} 
+	1&0 & 0\\
+	0&1&0\\
+	0&0&1                               
+	\end{bmatrix}$	
+\end{multicols}
+
+\subsubsection{Grössere Matrizen}
+Alle Elemete elementweise invertieren - Kehrwert. $\quad \Rightarrow \quad $\textit{Gilt nur wenn alle Elemente auf der Hauptdiagonale $\neq 0$ sind.}\\
+
+$A^{-1}= \begin{bmatrix}
+a_{11} & a_{12}& \ldots & a_{1n}\\
+a_{21}& &\ldots & \\
+\ldots \\
+a_{n1} & & \ldots & a_{nn}    			
+\end{bmatrix}^{-1}$
+
+\begin{enumerate}
+	\item $A^T$ bestimmen (Zeilen und Spalten vertauschen)
+	$ \; A^{T}= \begin{bmatrix}
+	a_{11} & a_{21}& \ldots & a_{n1}\\
+	a_{12}& &\ldots & \\
+	\ldots \\
+	a_{1n} & & \ldots & a_{nn}    			
+	\end{bmatrix}$	
+	\item Bei $A^T$ jedes Element durch Unterdeterminante ersetzen
+	$\;A^*=	\begin{bmatrix}
+	(-1)^{1+1}D_{11} &  \ldots	& (-1)^{1+n} D_{1n}\\
+	\ldots\\
+	(-1)^{n+1} D_{n1}& \ldots  & (-1)^{n+n} D_{nn}
+	\end{bmatrix}$
+	\item $A^{-1} = \frac{A^*}{\det A}$ 
+\end{enumerate}
+
+
+	\subsection{Diagonalisierung}
+	\begin{enumerate}
+		\item Eigenwerte $\lambda$ ausrechnen: $\det (A - I_n \lambda)=0$
+		\item Eigenvektoren $\vec{v}$ bilden: $(A- \lambda I_n)\vec{v}=0$
+		\item Transformationsmatrix: $T= [\vec{v_1} \ldots \vec{v_n}]$
+		\item $T^{-1}$ berechnen (Achtung ist A symmetrisch, dh. $A^T=A$ und
+		oder alle EV senktrecht zueinander, dann $T^{-1}=T^T$)
+		\item $D=\begin{bmatrix}
+		\lambda_1 &0 &0\\
+		0& \lambda_2 &0\\
+		0& 0& \lambda_3
+		\end{bmatrix} = A_{diag} = T^{-1}AT$
+	\end{enumerate}
+	
+	\subsection{Eigenwerte}
+	Die Eigenwerte $\lambda$ erhält man folgendermassen ($I$ ist die Einheitsmatrix):
+	\[ |\lambda I - A| = 0 \qquad \text{nach } \lambda \text{ auflösen} \]
