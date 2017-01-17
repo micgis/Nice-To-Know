@@ -1,14 +1,19 @@
-\title{Nice to Know}
-\author{M. Gisler}
-\RequirePackage{luatex85}
-\def\pgfsysdriver{pgfsys-pdftex.def}
-\documentclass[11pt, twoside, a4paper, fleqn]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Dokumentinformationen %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% !TeX program = pdflatex
+% !TeX encoding = utf8
+% !TeX spellcheck = de_DE
+\newcommand{\titleinfo}{Nice to Know}
+\newcommand{\authorname}{\href{mailto:mgisler@hsr.ch}{M. Gisler} }
+\newcommand{\authoremail}{\href{mailto:mgisler@hsr.ch}{M. Gisler} }
 
-%Includes
-\include{header/pakete}
-\include{header/zusammenfassung}
+\include{header/header}
 
-%Dokument
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Dokument			%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 \title{\Huge{Nice to Know}}
 \maketitle
@@ -18,8 +23,6 @@ Zusammenstellung von Sachen, welche immer wieder gebraucht werden
 \setcounter{tocdepth}{2} %Setzt tiefe des Inhaltsverzeichnis
 \thispagestyle{empty}
 \newpage
-
-
 \input{sections/siEinheiten}
 \input{sections/griechischesAlphabet}
 \input{sections/rechengesetze}
@@ -27,16 +30,15 @@ Zusammenstellung von Sachen, welche immer wieder gebraucht werden
 \input{sections/komplexeZahlen}
 \input{sections/trigonometrie}
 \input{sections/matrizen}
+\input{sections/wahrscheinlichkeit}
 \input{sections/differentialrechnung}
 \input{sections/integralrechung}
 \input{sections/fourierreihen}
 \input{sections/fouriertransformation}
 \input{sections/laplacetransformation}
-\pagebreak
 \input{sections/logischeOperationen}
 \input{sections/nassiShneidermann}
 \input{sections/signale}
-\input{sections/wahrscheinlichkeit}
 \input{sections/Linux-Tipps}
 
 \end{document}

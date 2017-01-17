@@ -1,0 +1,141 @@
+%BuG-Fix
+%Package pdf Error: Driver file ................ not found
+%If you have a luatex driver fail uncomment these lines
+\RequirePackage{luatex85}
+\def\pgfsysdriver{pgfsys-pdftex.def}
+% Genereller Header
+\documentclass[11pt,twoside,a4paper,fleqn]{article}
+% Dateiencoding
+%\usepackage{fontspec}
+%\setmainfont{Calibri}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}	%ä,ü...
+% Seitenränder
+\usepackage[left=1cm,right=1cm,top=0.5cm,bottom=0.5cm,includeheadfoot]{geometry}
+% Sprachpaket
+\usepackage[ngerman]{babel} % Silbentrennung und Rechtschreibung Englisch und Deutsch
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%% Wichtige Packages %%
+%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath}                % Allgemeine Matheumgebungen									
+\usepackage{amssymb}                % Fonts: msam,msbm, eufm & Mathesymbole, Mengen (lädt automatisch amsfonts)									
+\usepackage{array}                  % \newcolumntype, \firsthline, ,\lasthline, m{width}, b{width}									
+\usepackage{caption}                % Bildunterschriften									
+\usepackage{enumitem}               % basic environments: enumerate, itemize, description									
+\usepackage{fancybox}               % \fbox: \shad­ow­box, \dou­ble­box, \oval­box, \Oval­box									
+\usepackage{fancyhdr}               % Seiten schöner gestalten, insbesondere Kopf- und Fußzeile									
+\usepackage{floatflt}               % Textumflossene Abbildungen \begin{floatingfigure}[r]{Breite} : r rechts, l links, p links auf geraden Seiten und rechts auf ungeraden Seiten									
+\usepackage{graphicx}               % \includegraphics[keyvals]{imagefile}, [draft]graphicx zeigt nur Namen und Rahmen an, [final] hebt diese option auf => Bild wird angezeigt    									
+\usepackage{hyperref}               % Erstellt Verweise innerhalb und nach außerhalb eines PDF Dokumentes.									
+\usepackage{lastpage}               % Bspw. : Page 1 of 3 => \thepage\ of \pageref{LastPage}									
+\usepackage{listings}               % Erlaubt es Programmcode in der gewünschten Sprache zu hinterlegen (C++, Matlab,..). Definition der Sprache mit \lstset{language=name}..									
+\usepackage{longtable}              % Longtable erlaubt es Tabellen zu erstellen die bei der nächsten Seite weiterlaufen. (Bricht automatisch um)									
+\usepackage{mathabx}                % Mathesymbole									
+\usepackage{mathrsfs}               % \mathscr (Benötigt für Fourierreihen-Symbol)									
+%\usepackage{mathtools}              % Extension package to amsmath									
+\usepackage{multicol}               % multicols-Umgebung \begin{multicols}{3} erzeugt Abschnitt mit 3 Spalten									
+\usepackage{multirow}               % Tabelle: ermöglicht es Felder mehrerer Zeilen in einem zusammenzufassen									
+\usepackage{pdflscape}              % adds PDF support to the environment 'landscape'									
+\usepackage{pxfonts}                % Symbole, griechisches Alphabet, Integrale...									
+\usepackage{rotating}               % sideways, turn{degree}, rotate{degree}, sidewaysfigure, sidewaystable Umgebung									
+\usepackage{subcaption}             % Bildunterschriften für Subfigures									
+\usepackage{tabularx}               % tabularx-Umgebung: Hat feste Gesamtbreite, \begin{tabularx}{\textwidth}{c c c c c} X: Spalte mit variabler Breite, l, c, r, p{breite}, m{breite}									
+\usepackage{textcomp}               % text symbols: baht, bullet, copyright, musical-note, onequarter, section, yen									
+\usepackage{tikz}                   % Tikz Umgebung zur Grafikerzeugung									
+\usepackage{titlesec}               % Überschriften zu Textabstände
+\usepackage{trfsigns}               % Transformationszeichen \laplace, \Laplace..									
+\usepackage{trsym}                  % Weitere Laplace Zeichen erlaubt auch vertikale Transformationszeichen									
+\usepackage{verbatim}               % verbatim, verbatim*, comment Umgebung									
+\usepackage{wrapfig}                % Textumflossene Bilder und Tabellen, \begin{wrapfigure}[Zeilen]{Position}[Ueberhang]{Breite}									
+\usepackage{xcolor}                 % \pagecolor{color}, \textcolor{color}{text}, \colorbox{color}{text}, \fcolorbox{border-color}{fill-color}{text}									
+\usepackage{titlesec}
+% Zum Bilder einfach in Tabellen einfügen (valign=t)
+\usepackage[none]{hyphenat}
+\usepackage[export]{adjustbox}
+\usepackage{circuitikz}
+\usetikzlibrary{decorations.markings,arrows}
+\usepackage{esint}
+\usepackage{graphics}
+\usepackage{pdfpages} 
+
+%%%%%%%%%%%%%%%%%%%%
+% Generelle Makros %
+%%%%%%%%%%%%%%%%%%%%
+
+
+\newcommand\tabbild[2][]{%
+	\raisebox{0pt}[\dimexpr\totalheight+\dp\strutbox\relax][\dp\strutbox]{%
+		\includegraphics[#1]{#2}%
+	}%
+}
+
+
+%%%%%%%%%%
+% Farben %
+%%%%%%%%%%
+\definecolor{black}{rgb}{0,0,0}
+\definecolor{red}{rgb}{1,0,0}
+\definecolor{white}{rgb}{1,1,1}
+\definecolor{grey}{rgb}{0.8,0.8,0.8}
+\definecolor{green}{rgb}{0,.8,0.05}
+\definecolor{brown}{rgb}{0.603,0,0}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Mathematische Operatoren %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclareMathOperator{\sinc}{sinc}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Real}{Re}
+\DeclareMathOperator{\Imag}{Im}
+\DeclareMathOperator{\euler}{e}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\PolyGrad}{PolyGrad}
+\DeclareMathOperator{\gradient}{grad}
+\DeclareMathOperator{\rotation}{rot}
+\DeclareMathOperator{\divergenz}{div}
+\DeclareMathOperator{\imaginär}{j}
+\DeclareMathOperator\arccot{arccot}
+\DeclareMathOperator\arcsec{arcsec}
+\DeclareMathOperator\arcossec{arcossec}
+\DeclareMathOperator\arsinh{arsinh}
+\DeclareMathOperator\arcosh{arscosh}
+\DeclareMathOperator\artanh{artanh}
+\DeclareMathOperator\arcoth{arcoth}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Allgemeine Einstellungen %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Pdf Info
+\hypersetup{pdfauthor={\authorname},pdftitle={\titleinfo},colorlinks=false}
+\author{\authorname}
+\title{\titleinfo}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% Kopf- und Fusszeile %
+%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy}
+\fancyhf{}
+%Linien oben und unten
+\renewcommand{\headrulewidth}{0.5pt} 
+\renewcommand{\footrulewidth}{0.5pt}
+
+%Kopfzeile links bzw innen
+\fancyhead[L]{\titleinfo{ }}
+%Kopfzeile mitte
+%\fancyhead[C]{}
+%Kopfzeile rechts bzw. aussen
+\fancyhead[R]{Seite \thepage { }von \pageref{LastPage}}
+
+%Fusszeile links bzw. innen
+\fancyfoot[L]{\footnotesize{\authorname}}
+%Fusszeile mitte
+\fancyfoot[C]{\footnotesize{Elektrotechnik@HSR}}
+%Fusszeile rechts bzw. ausen
+\fancyfoot[R]{\footnotesize{\today}}
+% Einrücken verhindern versuchen
+\setlength{\parindent}{0pt}
